@@ -1,7 +1,5 @@
 class Node:
-
     #Объявление функции, которая будет инициализировать создание узлов
-
     def __init__(self, data, nextnode = None):
         self.data = data
         self.nextnode = nextnode
@@ -10,7 +8,7 @@ class Stack:
         self.top = None
 
     def push(self, data):
-        """ Добавление элемента """
+        '''Добавление элемента'''
         newnode = Node(data)
         newnode.nextnode = self.top
         self.top = newnode
