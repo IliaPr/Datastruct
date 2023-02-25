@@ -9,30 +9,16 @@ class Stack:
 
     def push(self, data):
         '''Добавление элемента'''
-        newnode = Node(data)
-        newnode.nextnode = self.top
-        self.top = newnode
+        self.newnode = Node(data)
+        self.newnode.nextnode = self.top
+        self.top = self.newnode
 
-
-if __name__ == '__main__':
-    n1 = Node(5, None)
-    n2 = Node('a', n1)
-    print(n1.data)
-    print(n2.data)
-    print(n1)
-    print(n2.nextnode)
-
-
-    stack = Stack()
-    stack.push('data1')
-    stack.push('data2')
-    stack.push('data3')
-    print(stack.top.data)
-    print(stack.top.nextnode.data)
-    print(stack.top.nextnode.nextnode.data)
-    print(stack.top.nextnode.nextnode.nextnode)
-    print(stack.top.nextnode.nextnode.nextnode.data)
-
-
-
-
+    def pop(self):
+        '''удаление элемента по принципу LIFO'''
+        if self.top == None:
+            return None
+        else:
+            self.pop_node = self.top
+            self.top = self.pop_node.nextnode
+            self.pop_node.nextnode = None
+            return self.pop_node.data
