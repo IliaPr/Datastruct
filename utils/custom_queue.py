@@ -13,13 +13,13 @@ class Queue:
 
     def enqueue(self, data):
         '''Создание очереди'''
-        new_node = Node(data)
+        newnode = Node(data)
         if self.first is None:
-            self.first = new_node
-            self.last = new_node
+            self.first = newnode
+            self.last = newnode
         else:
-            self.last.nextnode = new_node
-            self.last = new_node
+            self.last.nextnode = newnode
+            self.last = newnode
 
 if __name__ == '__main__':
     queue = Queue()
