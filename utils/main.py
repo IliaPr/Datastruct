@@ -22,3 +22,4 @@ class Stack:
             self.top = self.pop_node.nextnode
             self.pop_node.nextnode = None
             return self.pop_node.data
+

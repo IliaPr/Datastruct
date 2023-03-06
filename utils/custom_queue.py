@@ -20,15 +20,20 @@ class Queue:
         else:
             self.last.nextnode = newnode
             self.last = newnode
+    def dequeue(self):
+        '''Удаление элементов из очереди по принципу FIFO'''
+        if self.first is None:
+            return
+        value = self.first.data
+        self.first = self.first.nextnode
+        return value
 
 if __name__ == '__main__':
     queue = Queue()
     queue.enqueue('data1')
     queue.enqueue('data2')
     queue.enqueue('data3')
-
-    print(queue.first.data)
-    print(queue.first.nextnode.data)
-    print(queue.last.data)
-    print(queue.last.nextnode)
-    print(queue.last.nextnode.data)
+    print(queue.dequeue())
+    print(queue.dequeue())
+    print(queue.dequeue())
+    print(queue.dequeue())
