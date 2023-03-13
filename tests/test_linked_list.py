@@ -16,5 +16,16 @@ class Test_func(unittest.TestCase):
         self.assertEqual(ll.first.data, {'id': 2})
         self.assertEqual(ll.last.data, {'id': 3})
 
+    def test_to_list(self):
+        ll = LinkedList()
+        ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+        self.assertEqual(ll.to_list(), [{'id': 1, 'username': 'lazzy508509'}])
+
+    def test_get_data_by_id(self):
+        ll = LinkedList()
+        ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+        self.assertEqual(ll.get_data_by_id(1), {'id': 1, 'username': 'lazzy508509'})
+
+
 if __name__ == '__main__':
     unittest.main()
